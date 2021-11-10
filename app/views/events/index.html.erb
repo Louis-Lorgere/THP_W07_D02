@@ -1,27 +1,20 @@
-<ul>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
-
-    <li>
-      Voici ton email : <%= current_user.email %>
-    </li>
-
-
-
-    <li>
-      <%= link_to "Edit email / password", edit_user_registration_path %>
-    </li>
-
-  <% else %>
-    <li>    
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
-
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
-
-  <% end %>
-</ul>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome to Eventbrite</h1>
+    <p class="lead">Projet de simili Eventbrite dans la formation THP</p>
+    
+  </div>
+</div>
+<div class="album py-5 bg-light">
+  <div class="container">
+  <%@events.each do |event|%>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%=event.title%></h5>
+        <p class="card-text"><%=event.description%></p>
+        <%= link_to "Show Event", event_path(event.id), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <%end%>
+  </div>
+</div>

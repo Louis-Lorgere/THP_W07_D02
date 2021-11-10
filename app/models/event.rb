@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   validates :start_date,
     presence: true,
-    date: { after: Proc.new { Date.now }, message: 'must be after today' }
+    date: { after: Proc.new { Time.now }, message: 'must be after today' }
   validates :duration, presence: true, numericality: {only_integer: true}
   validate :duration_is_valid?
   validates :title, presence: true, length: {minimum: 5, maximum: 140}

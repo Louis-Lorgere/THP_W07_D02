@@ -1,0 +1,25 @@
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+    <div class="card p-4">
+        <div class=" image d-flex flex-column justify-content-center align-items-center"> <button class="btn btn-secondary"> <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" /></button><div class="name mt-3"><%= @user.first_name%></div> <span class="idd"><%= @user.email%></span>
+            
+            <div class="nav-item">
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link" %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="album py-5 bg-light">
+  <h2> Tes Events </h2>
+  <div class="container">
+  <%@user.events.each do |event|%>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%=event.title%></h5>
+        <p class="card-text"><%=event.description%></p>
+        <%= link_to "Show Event", event_path(event.id), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <%end%>
+  </div>
+</div>
