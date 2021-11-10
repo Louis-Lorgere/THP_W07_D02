@@ -10,5 +10,5 @@ Event.destroy_all
 User.destroy_all
 
 10.times do
-  User.create(email: Faker::Internet.email(domain: 'yopmail.com'), last_name: Faker::Name.last_name,first_name: Faker::Name.first_name, encrypted_password: Faker::Lorem.characters(number: rand(6..13)), description: Faker::Lorem.paragraph(sentence_count: 2))
+  User.create(email: Faker::Internet.email(domain: 'yopmail.com'), last_name: Faker::Name.last_name, first_name: Faker::Name.first_name, encrypted_password: Faker::Lorem.characters(number: rand(6..13)), description: Faker::Lorem.paragraph(sentence_count: 2))
 end
