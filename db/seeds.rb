@@ -15,5 +15,5 @@ User.destroy_all
 end
 
 10.times do 
-  Event.create(start_date: DateTime.new(2021,12,rand(1..31),12), duration: 30, description: Faker::Lorem.paragraph(sentence_count: 2), price: 50, location: "wherever", title: Faker::Movie.title, admin: User.all.sample(1).first)
+  Event.create(start_date: DateTime.new(2021,12,rand(1..31),12), duration: 30, description: Faker::Lorem.paragraph(sentence_count: 2), price: 50, location: "wherever", title: Faker::Movie.title, admin_id: User.all.sample(1).first.id)
 end
